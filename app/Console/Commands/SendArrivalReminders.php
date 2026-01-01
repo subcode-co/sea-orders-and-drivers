@@ -14,8 +14,8 @@ class SendArrivalReminders extends Command
 
     public function handle()
     {
-        $targetStart = now()->addHours(1);
-        $targetEnd   = now()->addHours(30);
+        $targetStart = now()->addDay()->subMinutes(2);
+        $targetEnd   = now()->addDay()->addMinutes(2);
 
         $requests = Request::where('arrival_notified', false)
             ->whereBetween('arrival_time', [$targetStart, $targetEnd])
