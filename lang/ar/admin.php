@@ -43,5 +43,5 @@ return [
     'drivers_count' => 'إجمالي عدد سائقين',
     'most_requested_driver' => 'أكثر السائقين تمييزا',
     'arrival_reminder' => 'تذكير وصول السائح',
-    'tourist_arrival_in_24_hours' => 'يوجد سائح مسبق الوصول للمطار :name في وقت :time',
+    'tourist_arrival_in_24_hours' =>'يوجد سائح باسم :name مسبق الوصول لمطار :airport_name في وقت :time',
 ];

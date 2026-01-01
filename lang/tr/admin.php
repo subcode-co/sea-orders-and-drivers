@@ -51,5 +51,5 @@ return [
     'drivers_count' => 'Toplam Sürücü Sayısı',
     'most_requested_driver' => 'En Çok İstekli Sürücü',
     'arrival_reminder' => 'Varış Hatırlatıcı',
-    
+    'tourist_arrival_in_24_hours' => 'Adı :name olan bir turist varış zamanı :time olan :airport_name havaalanına sahiptir.',
 ];

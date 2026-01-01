@@ -43,5 +43,5 @@ return [
     'drivers_count' => 'Total Drivers Count',
     'most_requested_driver' => 'Most Requested Driver',
     'arrival_reminder' => 'Arrival Reminder',
-    'tourist_arrival_in_24_hours' => 'There is a tourist pre-arrival at the airport :name at time :time',
+    'tourist_arrival_in_24_hours' => 'There is a tourist with name :name pre-arrival at airport :airport_name at time :time',
 ];
