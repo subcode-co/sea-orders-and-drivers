@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class request extends Model
+class Request extends Model
 {
     protected $fillable = [
         'tourist_name',
@@ -31,7 +31,7 @@ class request extends Model
 
     public function driver()
     {
-        return $this->belongsTo(driver::class);
+        return $this->belongsTo(Driver::class);
     }
 
     //calculate the total price of the trip plan details

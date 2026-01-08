@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class driver extends Model
+class Driver extends Model
 {
     protected $fillable = [
         'license_plate',
@@ -16,6 +16,6 @@ class driver extends Model
 
     public function requests()
     {
-        return $this->hasMany(request::class);
+        return $this->hasMany(Request::class);
     }
 }

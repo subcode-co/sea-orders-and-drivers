@@ -31,7 +31,10 @@ class RequestsForm
                                     ->nullable(),
                                 TextInput::make('tourist_phone')
                                     ->label(__('admin.tourist_phone'))
-                                    ->nullable(),
+                                    ->nullable()
+                                    ->tel()
+                                    ->maxLength(20)
+                                    ->numeric(),
                                 FileUpload::make('image')
                                     ->label(__('admin.personal_image'))
                                     ->nullable(),
@@ -48,11 +51,12 @@ class RequestsForm
                                     ->nullable(),
                                 DateTimePicker::make('departure_time')
                                     ->label(__('admin.departure_time'))
-                                    ->nullable(),
+                                    ->nullable()
+                                    ->after('arrival_time'),
                                 Select::make('driver_id')
                                 ->label(__('admin.driver'))
                                 ->relationship('driver', 'driver_name')
-                                ->nullable(),
+                                ->required(),
                         ]),
                         Tab::make('trip_plan_details')->label(__('admin.trip_plan_details'))
                             ->schema([
@@ -70,10 +74,13 @@ class RequestsForm
                                             ->nullable(),
                                         TextInput::make('cost')
                                             ->label(__('admin.cost'))
-                                            ->nullable(),
+                                            ->nullable()
+                                            ->numeric()
+                                            ->minValue(0),
                                         TextInput::make('notes')
                                             ->label(__('admin.notes'))
-                                            ->nullable(),
+                                            ->nullable()
+                                            ->maxLength(500),
                                     ])->columns(2)->columnSpanFull(),
                             ])->columns(2)->columnSpanFull(),
                 ])->columns(2)->columnSpanFull(),
