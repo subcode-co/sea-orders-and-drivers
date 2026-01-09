@@ -30,10 +30,13 @@ class RequestsStats extends StatsOverviewWidget
             ->get()
             ->sum(fn ($request) => $request->total_price);
 
-        $mostRequestedDriver = Driver::withCount('requests')
-            ->orderByDesc('requests_count')
-            ->first()?->driver_name;
-            
+            $mostRequestedDriver = Request::exists()
+            ? Driver::withCount('requests')
+                ->orderByDesc('requests_count')
+                ->first()?->driver_name
+            : null;
+        
+
         return [
             //all requests
             Stat::make(__('admin.requests'), Request::count())
