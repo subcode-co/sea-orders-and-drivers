@@ -32,8 +32,8 @@ class RequestsStats extends StatsOverviewWidget
 
         $mostRequestedDriver = Driver::withCount('requests')
             ->orderByDesc('requests_count')
-            ->first()->driver_name;
-
+            ->first()?->driver_name;
+            
         return [
             //all requests
             Stat::make(__('admin.requests'), Request::count())
